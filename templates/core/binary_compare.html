@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}二进制比对{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">二进制文件比对</h4>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">文件 1</label>
+                                <input type="file" class="form-control" name="file1" accept=".exe,.dll,.so,.dylib">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">文件 2</label>
+                                <input type="file" class="form-control" name="file2" accept=".exe,.dll,.so,.dylib">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-search"></i> 开始比对
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if result %}
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">比对结果</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <h5>相似度分析</h5>
+                    <p>总体相似度：{{ result.similarity }}%</p>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>相似代码段</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>文件 1 位置</th>
+                                    <th>文件 2 位置</th>
+                                    <th>相似度</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for match in result.matches %}
+                                <tr>
+                                    <td>{{ match.file1_location }}</td>
+                                    <td>{{ match.file2_location }}</td>
+                                    <td>{{ match.match_similarity }}%</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %} 

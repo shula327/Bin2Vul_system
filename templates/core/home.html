@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}首页{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <h1 class="display-4 mb-4">欢迎使用 Bin2Vul</h1>
+        <p class="lead mb-5">选择下面的功能开始您的分析工作</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <i class="bi bi-arrow-left-right display-1 text-primary mb-3"></i>
+                <h3>二进制比对</h3>
+                <p class="text-muted">比较两个二进制文件的相似度，帮助您识别代码克隆和重用，通过先进的机器学习算法准确定位相似代码片段。</p>
+                <a href="{% url 'binary_compare' %}" class="btn btn-primary">
+                    <i class="bi bi-arrow-right"></i> 开始比对
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-5">
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <i class="bi bi-shield-check display-1 text-success mb-3"></i>
+                <h3>漏洞分析</h3>
+                <p class="text-muted">分析二进制文件中的潜在漏洞，提供详细的安全评估报告，基于深度学习模型快速识别常见安全漏洞。</p>
+                <a href="{% url 'vulnerability_analysis' %}" class="btn btn-success">
+                    <i class="bi bi-arrow-right"></i> 开始分析
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
