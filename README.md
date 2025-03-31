@@ -1,19 +1,19 @@
-# Bin2Vul - 二进制分析工具
+# Bin2Vul - Binary Analysis Tool
 
-Bin2Vul 是一个基于 Django 开发的二进制文件分析平台，提供二进制文件比对和漏洞分析功能。该工具可以帮助安全研究人员和开发人员快速分析二进制文件的相似度，并检测潜在的安全漏洞。
+Bin2Vul is a binary file analysis platform developed based on Django, providing binary file comparison and vulnerability analysis capabilities. This tool helps security researchers and developers quickly analyze binary file similarities and detect potential security vulnerabilities.
 
-## 功能特点
+## Features
 
-- 二进制文件比对
+- Binary File Comparison
 
-- 漏洞分析
+- Vulnerability Analysis
 
 
-## 联系方式
+## Contact
 
-[不愿露脸的美女@example.com]
+[Anonymous beauty@example.com]
 
-## 更新日志
+## Changelog
 
 ### v1.0.0 (2024-03-31)
-- 初始版本发布
+- Initial Release
