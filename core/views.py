@@ -8,7 +8,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, '注册成功！')
+            messages.success(request, 'Registration successful!')
             return redirect('login')
     else:
         form = UserCreationForm()
@@ -22,7 +22,7 @@ def home(request):
 def binary_compare(request):
     result = None
     if request.method == 'POST':
-        # 比对
+        # Comparison
         pass
     return render(request, 'core/binary_compare.html', {'result': result})
 
@@ -30,6 +30,6 @@ def binary_compare(request):
 def vulnerability_analysis(request):
     vulnerabilities = None
     if request.method == 'POST':
-        # 分析
+        # Analysis
         pass
     return render(request, 'core/vulnerability_analysis.html', {'vulnerabilities': vulnerabilities}) 

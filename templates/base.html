@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-hans">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +21,12 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'binary_compare' %}">
-                            <i class="bi bi-arrow-left-right"></i> 二进制比对
+                            <i class="bi bi-arrow-left-right"></i> Binary Comparison
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'vulnerability_analysis' %}">
-                            <i class="bi bi-shield-check"></i> 漏洞分析
+                            <i class="bi bi-shield-check"></i> Vulnerability Analysis
                         </a>
                     </li>
                     {% endif %}
@@ -40,18 +40,18 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">
-                            <i class="bi bi-box-arrow-right"></i> 退出
+                            <i class="bi bi-box-arrow-right"></i> Logout
                         </a>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}">
-                            <i class="bi bi-box-arrow-in-right"></i> 登录
+                            <i class="bi bi-box-arrow-in-right"></i> Login
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'register' %}">
-                            <i class="bi bi-person-plus"></i> 注册
+                            <i class="bi bi-person-plus"></i> Register
                         </a>
                     </li>
                     {% endif %}
